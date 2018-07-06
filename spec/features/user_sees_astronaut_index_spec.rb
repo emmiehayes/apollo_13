@@ -1,3 +1,20 @@
+describe 'user sees all astronauts' do
+  describe 'they visit /astronauts' do
+
+    it 'displays all astronauts' do
+      astronaut_1 = Astronaut.create!(name: 'Buzz Aldrin', age: '39', job: 'Pilot')
+      astronaut_2 = Astronaut.create!(name: 'Neil Armstrong', age: '37', job: 'Commander')
+
+      visit '/astronauts'
+
+      expect(page).to have_content(astronaut_1.name)
+      expect(page).to have_content("Age: #{astronaut_1.age}")
+      expect(page).to have_content(astronaut_2.job)
+    end
+  end
+end
+
+
 =begin
 ```
 As a visitor,
