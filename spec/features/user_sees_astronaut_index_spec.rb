@@ -13,7 +13,7 @@ describe 'user sees all astronauts' do
       expect(page).to have_content(astronaut_2.job)
     end
 
-    xit 'displays average age of all astronauts' do
+    it 'displays average age of all astronauts' do
       astronaut_1 = Astronaut.create!(name: 'Buzz Aldrin', age: '39', job: 'Pilot')
       astronaut_2 = Astronaut.create!(name: 'Neil Armstrong', age: '37', job: 'Commander')
 
